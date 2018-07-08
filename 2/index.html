@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue.JS Tutorial</title>
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous">
+
+    <style>
+      [v-cloak] {
+        background-color: red;
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <!-- <h1 v-if="viewed">{{message}}</h1> -->
+      <!-- <h1 v-else>You have not viewed this page</h1> -->
+      <!-- <h1 v-once>{{message}}</h1> -->
+      <!-- <h1 v-cloak>{{message}}</h1> -->
+      <h1 v-bind:title="title">{{message}}</h1>
+      <img :src="url" :alt="title" :title="title">
+    </div>
+  </body>
+
+  <script src="../vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue World',
+        intro: "Welcome to the tutorial <small>of Vue.js</small>",
+        viewed: true,
+        viewed2: true,
+        title: 'You loaded the page on: ' + new Date(),
+        url: "http://vuejs.org/images/logo.png"
+      }
+    });
+  </script>
+</html>
